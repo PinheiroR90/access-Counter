@@ -6,21 +6,17 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.time.Instant;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
-
-import static java.lang.String.format;
 
 public class Main {
 
   public static void main(String[] args) {
 
     Scanner sc = new Scanner(System.in);
-    System.out.println("Write the name and path this file");
+    System.out.print("Write the name and path this file: ");
     String path = sc.nextLine();
 
     try (BufferedReader br = new BufferedReader(new FileReader(path))){
@@ -34,7 +30,7 @@ public class Main {
         set.add(new LogEntry(user,date));
         line = br.readLine();
       }
-      System.out.println("Set size: "+ set.size());
+      System.out.println("Size Access for users: "+ set.size());
     }
     catch(IOException e){
       e.printStackTrace();
